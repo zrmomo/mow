@@ -1,0 +1,37 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+# generated files
+bin/
+gen/
+obj/
+build/
+.settings/
+
+# Eclipse project files
+.classpath
+.project
+.properties
+
+# Intellij project files
+*.ipr
+*.iws
+.idea/**
+!.idea/codeStyles
+!.idea/codeStyles/**
+.gradle/
+
+# pack result
+output/
