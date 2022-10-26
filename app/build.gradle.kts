@@ -1,6 +1,9 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id ("com.android.application")
     id ("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
 }
 
 android {
@@ -35,6 +38,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+        // dataBinding = true
+    }
 }
 
 dependencies {
@@ -43,13 +50,36 @@ dependencies {
     implementation(Deps.appcompat)
     implementation(Deps.material)
     implementation(Deps.constraintlayout)
-//    implementation(Deps.navigationFragment)
-//    implementation(Deps.navigationUi)
-//    implementation(Deps.lifecycle)
-//    implementation(Deps.navigationFragmentKtx)
-//    implementation(Deps.navigationUiKtx)
+    implementation("androidx.appcompat:appcompat:1.5.1")
+    implementation("com.google.android.material:material:1.4.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     testImplementation(Deps.junit)
     androidTestImplementation(Deps.junitExt)
     androidTestImplementation(Deps.espressoCore)
+
+    //lifecycle and navigation
+    implementation(Deps.navigationFragment)
+    implementation(Deps.navigationUi)
+    implementation(Deps.lifecycle)
+    implementation(Deps.navigationFragmentKtx)
+    implementation(Deps.navigationUiKtx)
+
+    /*okhttp、retrofit*/
+    implementation(Deps.okhttp)
+    implementation(Deps.retrofit)
+    implementation(Deps.converterGson)
+    implementation(Deps.logging)
+
+    /*glide*/
+    implementation(Deps.glide)
+    kapt(Deps.glideCompiler)
+
+    /*immersionbar*/
+    implementation(Deps.immersionbar)
+    implementation(Deps.immersionbarktx)
+
+
 }
+
+
