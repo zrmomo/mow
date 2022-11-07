@@ -64,13 +64,15 @@ class LoginActivity :
     override fun setListener() {
         mBinding.btnLogin.setOnClickListener {
             if (!mBinding.cbServiceAgreement.isChecked) {
-                ToastUtil.show("")
+                ToastUtil.show("点那个checkbox 选中它")
+                return@setOnClickListener
             }
             attemptLogin()
         }
     }
 
     private fun attemptLogin() {
+        //将editText右侧的警告图标置空
         mBinding.etUsername.error = null
         mBinding.etPassword.error = null
 
@@ -87,7 +89,7 @@ class LoginActivity :
         }
 
         if (username.isEmpty()) {
-            mBinding.etPassword.error = "账号不能为空"
+            mBinding.etUsername.error = "账号不能为空"
             focusView = mBinding.etPassword
             cancel = true
         }

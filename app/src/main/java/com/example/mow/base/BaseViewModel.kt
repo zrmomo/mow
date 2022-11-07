@@ -101,6 +101,7 @@ open class BaseViewModel : ViewModel() {
                         }
                     }
                 }
+                ToastUtil.showCenter(e.message)
                 LogUtil.e(e.message)
             }
             // 网络请求失败

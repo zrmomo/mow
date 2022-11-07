@@ -1,7 +1,6 @@
 package com.example.mow.utils
 
 import android.app.Activity
-import android.app.Application
 import android.app.Application.ActivityLifecycleCallbacks
 import android.os.Bundle
 import java.util.Stack
@@ -16,7 +15,7 @@ object ActivityUtil {
     private val activityStack = Stack<Activity>()
 
     //Activity的生命周期回调，要求API14+（Android 4.0+）
-    private val instance = MyActivityLifecycleCallbacks()
+    private val instance = AppActivityLifecycleCallbacks()
 
     val activityLifecycleCallbacks: ActivityLifecycleCallbacks
         get() = instance
@@ -30,7 +29,10 @@ object ActivityUtil {
             return activity
         }
 
-    private class MyActivityLifecycleCallbacks : Application.ActivityLifecycleCallbacks {
+    /**
+     * 每个activity 的生命周期回调都会走ActivityLifecycleCallbacks这个接口
+     */
+    private class AppActivityLifecycleCallbacks : ActivityLifecycleCallbacks {
         override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
             activityStack.remove(activity)
             activityStack.push(activity)

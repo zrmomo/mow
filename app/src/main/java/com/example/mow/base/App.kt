@@ -3,6 +3,7 @@ package com.example.mow.base
 import android.app.Application
 import android.content.Context
 import com.example.mow.BuildConfig
+import com.example.mow.utils.ActivityUtil
 import com.example.mow.utils.LogUtil
 import kotlin.properties.Delegates
 
@@ -15,7 +16,11 @@ class App : Application() {
         super.onCreate()
         CONTEXT = applicationContext
 
-        //debug模式下打印log
+        // debug模式下打印log
         LogUtil.isOpenLog(BuildConfig.DEBUG)
+        // activity管理
+        registerActivityLifecycleCallbacks(
+            ActivityUtil.activityLifecycleCallbacks
+        )
     }
 }

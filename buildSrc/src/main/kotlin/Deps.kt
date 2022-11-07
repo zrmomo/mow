@@ -1,5 +1,4 @@
-
-object Versions{
+object Versions {
     const val gradle_version = "7.0.2"
     const val kotlin_version = "1.5.31"
     const val core_version = "1.7.0"
@@ -33,16 +32,20 @@ object Deps {
     const val coreKtx = "androidx.core:core-ktx:${Versions.core_version}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.compat_version}"
     const val material = "com.google.android.material:material:${Versions.material_version}"
-    const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraint_version}"
+    const val constraintlayout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraint_version}"
 
     const val junit = "junit:junit:${Versions.junit_version}"
     const val junitExt = "androidx.test.ext:junit:${Versions.extJunit_version}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso_version}"
 
-    const val navigationFragment = "androidx.navigation:navigation-fragment:${Versions.navigation_version}"
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment:${Versions.navigation_version}"
     const val navigationUi = "androidx.navigation:navigation-ui:${Versions.navigation_version}"
-    const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation_version}"
-    const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation_version}"
+    const val navigationFragmentKtx =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation_version}"
+    const val navigationUiKtx =
+        "androidx.navigation:navigation-ui-ktx:${Versions.navigation_version}"
     const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle_version}"
 
     /*okhttp、retrofit*/
@@ -56,6 +59,9 @@ object Deps {
     const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide_version}"
 
     /*immersionbar*/
-    const val immersionbar = "com.geyifeng.immersionbar:immersionbar:${Versions.immersionbar_version}"
-    const val immersionbarktx = "com.geyifeng.immersionbar:immersionbar-ktx:${Versions.immersionbar_version}"
+    const val immersionbar =
+        "com.geyifeng.immersionbar:immersionbar:${Versions.immersionbar_version}"
+    const val immersionbarktx =
+        "com.geyifeng.immersionbar:immersionbar-ktx:${Versions.immersionbar_version}"
+
 }
