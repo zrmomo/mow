@@ -24,6 +24,8 @@ object Versions {
 
     const val immersionbar_version = "3.2.2"
 
+    const val baservadapter_version = "3.0.10"
+
 
 }
 
@@ -63,5 +65,8 @@ object Deps {
         "com.geyifeng.immersionbar:immersionbar:${Versions.immersionbar_version}"
     const val immersionbarktx =
         "com.geyifeng.immersionbar:immersionbar-ktx:${Versions.immersionbar_version}"
+
+    const val baservadapter =
+        "com.github.CymChad:BaseRecyclerViewAdapterHelper:${Versions.baservadapter_version}"
 
 }

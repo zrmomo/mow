@@ -77,6 +77,9 @@ dependencies {
     implementation(Deps.immersionbar)
     implementation(Deps.immersionbarktx)
 
+    /*BaseRecyclerViewAdapterHelper*/
+    implementation(Deps.baservadapter)
+
 
 }
 
