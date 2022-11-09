@@ -5,6 +5,15 @@ package com.example.mow.data.bean
  * @author: zhourui
  * @date: 2022/11/8
  */
+data class Article(
+    val curPage: Int,
+    val datas: List<ArticleBean>,
+    val offset: Int,
+    val over: Boolean,
+    val pageCount: Int,
+    val size: Int,
+    val total: Int
+)
 data class ArticleBean(
     val adminAdd: Boolean,
     val apkLink: String,

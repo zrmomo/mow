@@ -5,10 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/iv_home_"
+    <TextView
+        android:id="@+id/iv_home_article_new"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:text="@string/home_article_new"
+        android:textColor="@color/color_3192F1"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,8 +21,89 @@
         android:id="@+id/tv_home_author_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="作者名字"
-        app:layout_constraintStart_toStartOf="@id/iv_home_"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="@dimen/dp_3"
+        app:layout_constraintStart_toEndOf="@id/iv_home_article_new"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/home_author_name" />
+
+    <TextView
+        android:id="@+id/tv_home_article_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:textColor="@color/color_3192F1"
+        app:layout_constraintStart_toEndOf="@id/tv_home_author_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/home_article_type" />
+
+    <TextView
+        android:id="@+id/tv_home_article_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="21小时前" />
+
+    <ImageView
+        android:id="@+id/iv_home_article_image"
+        android:layout_width="120dp"
+        android:layout_height="@dimen/dp_80"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_home_article_title" />
+
+    <TextView
+        android:id="@+id/tv_home_article_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_8"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_home_article_image"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_author_name"
+        tools:text="公众号文章列表的标题" />
+
+    <TextView
+        android:id="@+id/tv_home_article_part"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_home_article_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_article_title"
+        tools:text="正文文本" />
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/bi_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="iv_home_article_image,tv_home_article_title,tv_home_article_part"/>
+
+    <TextView
+        android:id="@+id/tv_home_article_stick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:text="@string/home_article_stick"
+        android:textColor="@color/color_FE350E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_home_article_source" />
+    <TextView
+        android:id="@+id/tv_home_article_source"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="公众号.momo"
+        app:layout_constraintStart_toEndOf="@id/tv_home_article_stick"
+        app:layout_constraintTop_toBottomOf="@id/bi_view"
+        android:layout_marginStart="@dimen/dp_5"/>
+<!--    <ImageView-->
+<!--        android:layout_width=""-->
+<!--        android:layout_height=""-->
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

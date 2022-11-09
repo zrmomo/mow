@@ -8,6 +8,12 @@ import com.example.mow.data.http.ApiException
  * @date: 2022/10/26
  */
 class BaseBean<T>(private val errorCode: Int, private val data: T, private val errorMsg: String?) {
+
+//    {
+//        "data": ...,
+//        "errorCode": 0,
+//        "errorMsg": ""
+//    }
     fun code(): Int {
         if (errorCode == 0) {
             return 0

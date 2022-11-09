@@ -8,4 +8,5 @@ import com.example.mow.base.BaseRepository
  * @date: 2022/10/27
  */
 class HomeRepository :BaseRepository(){
+
 }

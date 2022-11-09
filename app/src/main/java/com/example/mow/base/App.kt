@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.example.mow.BuildConfig
 import com.example.mow.utils.ActivityUtil
+import com.example.mow.utils.CrashLogUtils
 import com.example.mow.utils.LogUtil
 import kotlin.properties.Delegates
 
@@ -22,5 +23,6 @@ class App : Application() {
         registerActivityLifecycleCallbacks(
             ActivityUtil.activityLifecycleCallbacks
         )
+        CrashLogUtils.getInstance().init(this)
     }
 }

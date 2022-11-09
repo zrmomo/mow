@@ -9,6 +9,7 @@ import com.example.mow.ui.main.home.HomeFragment
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     override fun initialize() {
         super.initialize()
+        throw Exception("绳哥 nb")
         initView()
     }
 

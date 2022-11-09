@@ -8,5 +8,40 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="color_F7444444">#F7444444</color>
+    <color name="color_6C1900">#6C1900</color>
+    <color name="color_7a2f19">#7a2f19</color>
+    <color name="color_969696">#969696</color>
+    <color name="color_553534">#553534</color>
+    <color name="color_825B5B">#825B5B</color>
+    <color name="color_FEFFFE">#FEFFFE</color>
+    <color name="color_FE350E">#FE350E</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_E4E4E4">#E4E4E4</color>
+    <color name="color_CCCCCC">#CCCCCC</color>
+    <color name="color_3192F1">#3192F1</color>
+    <color name="color_DD3919">#DD3919</color>
+    <color name="color_303035">#303035</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_fdc812">#fdc812</color>
+    <color name="color_e8b5a3">#e8b5a3</color>
+    <color name="color_b7d0df">#b7d0df</color>
+    <color name="color_7E6308">#7E6308</color>
+    <color name="color_5B676F">#5B676F</color>
+    <color name="color_735A51">#735A51</color>
+    <color name="color_893737">#893737</color>
+    <color name="color_591824">#591824</color>
+    <color name="color_dddddd">#dddddd</color>
+    <color name="color_410A17">#410A17</color>
+    <color name="color_501A1D">#501A1D</color>
+    <color name="color_66444444">#66444444</color>
+    <color name="color_266170F0">#266170F0</color>
+    <color name="color_265060E8">#265060E8</color>
+    <color name="color_264853B3">#264853B3</color>
+    <color name="color_4D444444">#4D444444</color>
+    <color name="color_3664C0">#3664C0</color>
+    <color name="color_fecb69">#fecb69</color>
+
     <color name="transparent">#00000000</color>
+
 </resources>
