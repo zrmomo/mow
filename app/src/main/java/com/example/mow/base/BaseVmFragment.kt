@@ -21,7 +21,7 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel>(inflate: (La
     private var lazyLoaded = false
 
     //分页参数
-    protected open val mTotalCount = 20//每次加载数量
+    protected open val mTotalCount = 100//每次总共的加载数量
     protected open var mCurrentSize = 0//当前加载数量
     protected open var mCurrentPage = 0//当前加载页数
 

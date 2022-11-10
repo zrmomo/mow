@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mow.data.http.ApiException
-import com.example.mow.utils.LogUtil
+import com.example.mow.utils.LogCat
 import com.example.mow.utils.ToastUtil
 import com.google.gson.JsonParseException
 import kotlinx.coroutines.CancellationException
@@ -102,22 +102,22 @@ open class BaseViewModel : ViewModel() {
                     }
                 }
                 ToastUtil.showCenter(e.message)
-                LogUtil.e(e.message)
+                LogCat.e(e.message)
             }
             // 网络请求失败
             is ConnectException, is SocketTimeoutException, is UnknownHostException, is HttpException -> {
                 if (showErrorToast) ToastUtil.show("网络请求失败")
-                LogUtil.e("网络请求失败" + e.message)
+                LogCat.e("网络请求失败" + e.message)
             }
             // 数据解析错误
             is JsonParseException -> {
                 if (showErrorToast) ToastUtil.show("数据解析错误")
-                LogUtil.e("数据解析错误" + e.message)
+                LogCat.e("数据解析错误" + e.message)
             }
             // 其他错误
             else -> {
                 if (showErrorToast) ToastUtil.show(e.message ?: return)
-                LogUtil.e(e.message ?: return)
+                LogCat.e(e.message ?: return)
             }
         }
     }

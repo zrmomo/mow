@@ -7,7 +7,7 @@ package com.example.mow.data.bean
  */
 data class Article(
     val curPage: Int,
-    val datas: List<ArticleBean>,
+    val datas: MutableList<ArticleBean>,
     val offset: Int,
     val over: Boolean,
     val pageCount: Int,

@@ -195,7 +195,7 @@ public class CrashLogUtils implements UncaughtExceptionHandler{
                 }
                 return fileName;
             } catch (Exception e) {
-                LogUtil.INSTANCE.e(e.toString());
+                LogCat.INSTANCE.e(e.toString());
                 return null;
             }
         }

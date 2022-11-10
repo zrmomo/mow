@@ -5,7 +5,7 @@ import android.content.Context
 import com.example.mow.BuildConfig
 import com.example.mow.utils.ActivityUtil
 import com.example.mow.utils.CrashLogUtils
-import com.example.mow.utils.LogUtil
+import com.example.mow.utils.LogCat
 import kotlin.properties.Delegates
 
 class App : Application() {
@@ -18,7 +18,7 @@ class App : Application() {
         CONTEXT = applicationContext
 
         // debug模式下打印log
-        LogUtil.isOpenLog(BuildConfig.DEBUG)
+        LogCat.setDebug(BuildConfig.DEBUG)
         // activity管理
         registerActivityLifecycleCallbacks(
             ActivityUtil.activityLifecycleCallbacks

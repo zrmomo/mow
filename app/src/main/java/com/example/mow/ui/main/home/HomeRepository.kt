@@ -7,6 +7,10 @@ import com.example.mow.base.BaseRepository
  * @author: zhourui
  * @date: 2022/10/27
  */
-class HomeRepository :BaseRepository(){
+class HomeRepository : BaseRepository() {
+
+    suspend fun homeArticleList(page: Int?) = apiService().homeArticleList(page)
+    suspend fun homeTopArticleList(page: Int?) = apiService().homeTopArticleList()
+    suspend fun homeBanner(page: Int?) = apiService().homeBanner(page)
 
 }
