@@ -1,20 +1,6 @@
 package com.example.mow.data.bean
 
-/**
- * @description 正文数据类
- * @author: zhourui
- * @date: 2022/11/8
- */
-data class Article(
-    val curPage: Int,
-    val datas: MutableList<ArticleBean>,
-    val offset: Int,
-    val over: Boolean,
-    val pageCount: Int,
-    val size: Int,
-    val total: Int
-)
-data class ArticleBean(
+data class TopArticleBean(
     val adminAdd: Boolean,
     val apkLink: String,
     val audit: Int,
@@ -49,6 +35,5 @@ data class ArticleBean(
     val type: Int,
     val userId: Int,
     val visible: Int,
-    val zan: Int,
-    var top: Boolean = false
+    val zan: Int
 )

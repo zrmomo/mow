@@ -3,6 +3,7 @@ package com.example.mow.data.http
 import android.util.Log
 import com.example.mow.data.http.interceptor.AddCookiesInterceptor
 import com.example.mow.data.http.interceptor.ReceivedCookiesInterceptor
+import com.example.mow.utils.LogCat
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -26,15 +27,19 @@ object RetrofitClient {
     }
 
     init {
-        val loggingInterceptor = HttpLoggingInterceptor { Log.d("httpLog", it) }
+        val loggingInterceptor = HttpLoggingInterceptor { LogCat.json(it,"ssda") }
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
         /**OkHttpClient*/
         val okHttpClient = OkHttpClient.Builder().callTimeout(CALL_TIMEOUT, TimeUnit.SECONDS)
             .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
-            .readTimeout(IO_TIMEOUT, TimeUnit.SECONDS).writeTimeout(IO_TIMEOUT, TimeUnit.SECONDS)
-            .addInterceptor(AddCookiesInterceptor()).addInterceptor(ReceivedCookiesInterceptor())
-            .addInterceptor(loggingInterceptor).retryOnConnectionFailure(true).build()
+            .readTimeout(IO_TIMEOUT, TimeUnit.SECONDS)
+            .writeTimeout(IO_TIMEOUT, TimeUnit.SECONDS)
+            .addInterceptor(loggingInterceptor)
+            .addInterceptor(AddCookiesInterceptor())
+            .addInterceptor(ReceivedCookiesInterceptor())
+            .retryOnConnectionFailure(true)
+            .build()
 
         /**Retrofit*/
         val retrofit = Retrofit.Builder().client(okHttpClient).baseUrl(Api.BASE_URL)

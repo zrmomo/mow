@@ -1,6 +1,5 @@
 package com.example.mow.ui.adapter
 
-import android.annotation.SuppressLint
 import android.text.Html
 import android.view.View
 import android.widget.ImageView
@@ -20,13 +19,17 @@ import com.example.mow.utils.KotlinXUtil.isEmpty
  */
 class ArticleAdapter : BaseQuickAdapter<ArticleBean, BaseViewHolder>(R.layout.home_list_item),
     LoadMoreModule {
-    @SuppressLint("SetTextI18n")
     override fun convert(holder: BaseViewHolder, item: ArticleBean) {
         if (!item.envelopePic.isEmpty()) {
             Glide.with(context).load(item.envelopePic)
                 .into(holder.getView<ImageView>(R.id.iv_home_article_image))
         } else {
             holder.getView<ImageView>(R.id.iv_home_article_image).visibility = View.GONE
+        }
+        if (item.top) {
+            holder.getView<TextView>(R.id.tv_home_article_stick).visibility = View.VISIBLE
+        } else {
+            holder.getView<TextView>(R.id.tv_home_article_stick).visibility = View.GONE
         }
         holder.getView<TextView>(R.id.tv_home_author_name).text = item.author
         holder.getView<TextView>(R.id.tv_home_article_type)

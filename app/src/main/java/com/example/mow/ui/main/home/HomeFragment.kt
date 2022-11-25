@@ -1,6 +1,7 @@
 package com.example.mow.ui.main.home
 
 import com.example.mow.base.BaseVmFragment
+import com.example.mow.data.bean.ArticleBean
 import com.example.mow.databinding.FragmentHomeBinding
 import com.example.mow.ui.adapter.ArticleAdapter
 
@@ -17,7 +18,7 @@ class HomeFragment :
                 mBinding.rvHomeList.postDelayed({
                     //当前总共加载的数量 < mTotalCount 时可以加载更多 否则就不再加载更多
                     // 分页加载策略
-                    if (mCurrentSize > mTotalCount) {
+                    if (mCurrentSize < mTotalCount) {
                         mArticleAdapter.loadMoreModule.loadMoreEnd(true)
                     } else {
                         // 请求页码加1 开始下一页请求
@@ -32,7 +33,10 @@ class HomeFragment :
 
     override fun initData() {
         super.initData()
+        //首页文章
         mViewModel.homeArticleList(mCurrentPage)
+        //置顶文章
+//        mViewModel.homeTopArticleList()
     }
 
     override fun observe() {
@@ -46,6 +50,16 @@ class HomeFragment :
                 mArticleAdapter.addData(it)
                 mArticleAdapter.loadMoreModule.loadMoreComplete()
             }
+        }
+        mViewModel.topArticleList.observe(this) {
+            mArticleAdapter.addData(it.also {
+                articleBeans ->
+                articleBeans.map {
+                    articleBean ->
+                    articleBean.top = true
+                }
+            })
+
         }
     }
 
